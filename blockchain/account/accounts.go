@@ -436,10 +436,15 @@ func (m *Manager) DeleteAccount(in struct {
 	}
 
 	storeBatch := m.db.NewBatch()
+
+	m.cacheMu.Lock()
 	m.aliasCache.Remove(account.Alias)
+	m.cacheMu.Unlock()
+
 	storeBatch.Delete(aliasKey(account.Alias))
 	storeBatch.Delete(Key(account.ID))
 	storeBatch.Write()
+
 	return nil
 }
 

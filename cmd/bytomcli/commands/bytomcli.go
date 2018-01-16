@@ -88,6 +88,7 @@ func AddCommands() {
 	BytomcliCmd.AddCommand(createAssetCmd)
 	BytomcliCmd.AddCommand(listAssetsCmd)
 	BytomcliCmd.AddCommand(updateAssetTagsCmd)
+	BytomcliCmd.AddCommand(updateAssetAliasCmd)
 
 	BytomcliCmd.AddCommand(listTransactionsCmd)
 	BytomcliCmd.AddCommand(listUnspentOutputsCmd)
@@ -129,5 +130,3 @@ func AddCommands() {
 
 	BytomcliCmd.AddCommand(versionCmd)
 }
-
-
